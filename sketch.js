@@ -29,9 +29,9 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(base.width/2, base.height/2);
+  createCanvas(base.width, base.height);
   colorMode(HSB, 360, 100, 100, 100);
-  frameRate(8);
+  frameRate(1);
   for (var j = 0; j < 500; j++) {
 		drips[j] = new Drip(random(width), random(height), random(200), random(90), random(360));
 }
@@ -163,4 +163,8 @@ class Drip {
       this.k *= -1;
     }
 	}
+}
+
+function mousePressed(){
+  saveCanvas('DodgeAndBurn'+frameCount);
 }
